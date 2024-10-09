@@ -1,0 +1,244 @@
+/* General header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #1e1e1e; /* Dark background for the header */
+  color: #fff;
+  position: relative;
+  z-index: 1000;
+  padding-right: 0px;
+}
+
+/* Logo styling */
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo img {
+  height: 50px;
+  width: auto;
+}
+
+.header__logo-text {
+  font-size: 45px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #59b9f1; /* Color for the logo text */
+}
+
+/* Navbar styling */
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav-item {
+  margin: 0 15px;
+  position: relative;
+}
+
+/* Make welcome message look like other buttons */
+.header__welcome {
+  font-size: 25px; /* Adjust the font size */
+  font-weight: bold;
+  color: #0a2949; /* Match color with buttons */
+  margin: 0; /* Reset margin */
+  display: flex; /* Align it properly */
+  align-items: center; /* Center vertically */
+  background-color: transparent; /* Background similar to buttons */
+  border: none; /* No border */
+  cursor: pointer; /* Indicate it's clickable */
+  padding: 0 15px; /* Add some horizontal padding */
+}
+
+/* Add hover effect for welcome message */
+.header__welcome:hover {
+  color: #FFF; /* Change color on hover */
+  text-decoration: underline; /* Optional: add underline on hover */
+}
+
+/* Navbar button styling */
+.header__nav-button {
+  background-color: transparent;
+  border: none;
+  color: #59b9f1;
+  font-size: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-button i {
+  margin-left: 5px;
+}
+
+.header__nav-button:hover {
+  color: #59b9f1; /* Hover effect for buttons */
+}
+
+/* Dropdown menu for "Games" */
+.header__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333; /* Dark background for dropdown */
+  padding: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1000;
+  min-width: 150px;
+  display: none; /* Hidden by default */
+}
+
+.header__nav-item:hover .header__dropdown {
+  display: block; /* Show dropdown on hover */
+}
+
+.header__dropdown a {
+  display: block;
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.header__dropdown a:hover {
+  background-color: #59b9f1; /* Blue background on hover */
+  color: #fff;
+}
+
+/* Search bar styling */
+.header__search-input {
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid #59b9f1;
+  background-color: #222;
+  color: #fff;
+  outline: none;
+  width: 250px;
+  font-size: 16px;
+}
+
+.header__search-input::placeholder {
+  color: #aaa;
+}
+
+.header__clear-button {
+  background-color: transparent;
+  border: none;
+  color: #59b9f1;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.header__clear-button:hover {
+  text-decoration: underline;
+}
+
+/* Suggestions list */
+.header__suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1e1e1e;
+  width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header__suggestions li {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+}
+
+.header__suggestions li:hover {
+  background-color: #59b9f1;
+}
+
+.header__suggestion-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+/* Authenticated user icons */
+.fas.fa-user-circle {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+/* Logout button styling */
+.header__nav-item button:hover {
+  color: #FFF;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header__nav-item {
+    margin-bottom: 15px;
+  }
+
+  .header__search-input {
+    width: 100%;
+  }
+
+  .header__suggestions {
+    width: 100%;
+  }
+}
+
+/* Scrollbar customization */
+.header__suggestions::-webkit-scrollbar {
+  width: 10px;
+}
+
+.header__suggestions::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+.header__suggestions::-webkit-scrollbar-thumb {
+  background-color: #59b9f1; /* Scrollbar color */
+  border-radius: 5px;
+  border: 2px solid #1e1e1e; /* Adjust the border to match background */
+}
+
+.header__suggestions::-webkit-scrollbar-thumb:hover {
+  background-color: #fff; /* Change scrollbar thumb color on hover */
+}
+.user-name{
+color: #59b9f1;
+font-size: 20px;
+margin-top: 100px;
+
+}

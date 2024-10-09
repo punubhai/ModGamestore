@@ -1,0 +1,179 @@
+.App {
+  text-align: center;
+  background-image: url('https://i.pinimg.com/originals/0a/78/59/0a7859459211275b4e8d3b212d4e9522.gif'); /* Background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: sans-serif;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.game-card {
+  background-color: rgba(0, 0, 0, 0.8); /* Increased opacity */
+  border-radius: 10px;
+  margin: 10px;
+  overflow: hidden;
+  width: 200px;
+  transition: transform 0.2s; /* Animation on hover */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+}
+
+.game-card img {
+  width: 100%;
+  height: auto;
+}
+
+.game-info {
+  padding: 10px;
+}
+
+.content-container {
+  background-color: rgba(0, 0, 0, 0.8); /* Increased opacity */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: left;
+}
+
+.browse-button {
+  padding: 10px 20px;
+  background-color: #FF6B6B;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.browse-button:hover {
+  background-color: #FF3D3D;
+}
+
+.upload-box {
+  background-color: rgba(0, 0, 0, 0.7); /* Increased opacity */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.upload-button {
+  padding: 10px 20px;
+  background-color: #6BCB77;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+  background-color: #36B82E;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.popup-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.popup-close-button,
+.popup-download-button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-close-button {
+  background-color: #FF6B6B;
+  color: white;
+}
+
+.popup-close-button:hover {
+  background-color: #FF3D3D;
+}
+
+.popup-download-button {
+  background-color: #6BCB77;
+  color: white;
+}
+
+.popup-download-button:hover {
+  background-color: #36B82E;
+}
+
+/* Footer styles */
+.footer {
+  width: 100%; /* Full width */
+  background-color: #1e1e1e; /* Matte black background */
+  padding: 30px 20px; /* Padding for spacing */
+  color: #f0f0f0; /* Same text color as the header */
+  text-align: center; /* Center text */
+  font-size: 15px; /* Font size */
+  border-top: 2px solid rgba(255, 255, 255, 0.3); /* Light border for contrast */
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center content vertically */
+  height: auto; /* Allow height to adjust based on content */
+}
+
+.footer h3 {
+  margin: 10px 0; /* Spacing for header */
+}
+
+.footer p {
+  margin: 5px 0; /* Spacing for paragraphs */
+}
+
+.social-media-icons {
+  display: flex; /* Flexbox for icons */
+  justify-content: center; /* Center the icons */
+  gap: 15px; /* Space between icons */
+  margin-top: 10px; /* Margin above icons */
+}
+
+.social-media-icons img {
+  width: 24px; /* Icon size */
+  height: 24px; /* Icon size */
+}

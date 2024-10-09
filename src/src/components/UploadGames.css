@@ -1,0 +1,178 @@
+/* General styles for the upload games container */
+.upload-games-container {
+  background-image: url('https://www.baltana.com/files/wallpapers-14/Kirito-HD-Wallpaper-37973.jpg');
+  background-size: cover; /* Cover the whole area */
+  background-position: center; /* Center the background */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  height: 100vh; /* Full viewport height */
+  padding-top: 100px;
+}
+
+/* Styles for the upload games form */
+.upload-games {
+  display: flex; /* Add Flexbox */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  background-color: rgba(0, 0, 0, 0.7); /* Matte black with transparency */
+  color: #fff; /* White text */
+  padding: 50px; /* Increased padding for better spacing */
+  border-radius: 10px; /* Round corners */
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7); /* More pronounced shadow effect */
+  width: 500px; /* Fixed width for the box */
+  text-align: center; /* Center text */
+  max-width: 90%; /* Responsive width for smaller screens */
+}
+
+/* Styles for the title */
+.upload-games h1 {
+  margin-bottom: 20px; /* Spacing below the title */
+  font-size: 24px; /* Increased font size for the title */
+}
+
+/* Styles for input fields and buttons */
+.upload-games input,
+.upload-games textarea,
+.upload-games select,
+.upload-games button {
+  margin: 10px 0; /* Spacing between elements */
+  padding: 12px; /* Increased padding for better touch targets */
+  border-radius: 5px; /* Round corners */
+  border: none; /* Remove border */
+}
+
+/* Styles for text inputs and text areas */
+.upload-games input,
+.upload-games textarea {
+  width: 100%; /* Full width */
+  background-color: rgba(255, 255, 255, 0.1); /* Light background for input fields */
+  color: #fff; /* White text for input fields */
+  font-size: 16px; /* Increased font size for better readability */
+}
+
+/* Styles for the textarea */
+.upload-games textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 80px; /* Minimum height for textarea */
+}
+
+/* Styles for buttons */
+.upload-games button {
+  background-color: #4CAF50; /* Green button */
+  color: white; /* White text */
+  cursor: pointer; /* Pointer on hover */
+  width: 100%; /* Full width */
+  font-size: 16px; /* Increased font size for button */
+}
+
+/* Button hover state */
+.upload-games button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Styles for status messages */
+.upload-games p {
+  color: #fff; /* Change upload status text color */
+  margin-top: 15px; /* Spacing above the status text */
+}
+
+/* Styles for footer */
+.footer {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for footer */
+  color: #fff; /* White text */
+  padding: 20px; /* Padding for spacing */
+  text-align: center; /* Center text */
+  margin-top: 20px; /* Margin to separate from the upload section */
+  position: relative; /* Position relative for layout */
+}
+
+/* Header styles for footer */
+.footer h3 {
+  margin: 10px 0; /* Spacing for header */
+}
+
+/* Paragraph styles for footer */
+.footer p {
+  margin: 5px 0; /* Spacing for paragraphs */
+}
+
+/* Styles for social media icons */
+.social-media-icons {
+  display: flex; /* Flexbox for icons */
+  justify-content: center; /* Center the icons */
+  gap: 15px; /* Space between icons */
+  margin-top: 10px; /* Margin above icons */
+}
+
+/* Icon size */
+.social-media-icons img {
+  width: 24px; /* Icon size */
+  height: 24px; /* Icon size */
+}
+
+/* Styles for the genre dropdown */
+.upload-games select {
+  background-color: rgba(255, 255, 255, 0.1); /* Match UI background */
+  color: #fff; /* White text for select field */
+  font-size: 16px; /* Increased font size for better readability */
+  padding: 12px; /* Add padding for better touch targets */
+  border-radius: 5px; /* Round corners */
+  border: none; /* Remove border */
+  width: 105%; /* Full width */
+}
+
+
+/* Ensure the body takes the full height of the viewport */
+body {
+  margin: 0; /* Remove default margin */
+  min-height: 100vh; /* Full viewport height */
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack children vertically */
+}
+
+/* Main content area styles */
+.upload-games-container {
+  flex: 1; /* Allow this area to grow and fill space */
+  display: flex; /* Flexbox for alignment */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+}
+#genre{
+background-color: rgba(255, 255, 255, 0.1);
+
+}
+.custom-dropdown {
+  position: relative;
+  width: 105%;
+  cursor: pointer; /* Show pointer on hover */
+}
+
+.selected {
+  background-color: rgba(255, 255, 255, 0.1); /* Background for the select box */
+  color: #fff; /* Text color for select */
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.options {
+  display: block; /* Show options */
+  position: absolute;
+  background-color: #1e1e1e;
+  width: 100%;
+  border-radius: 5px;
+  z-index: 1;
+  margin-top: 5px; /* Space between the selected and options */
+}
+
+.option {
+  padding: 12px;
+  color: #fff; /* Text color for options */
+  cursor: pointer; /* Pointer on hover */
+}
+
+.option:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
+}
