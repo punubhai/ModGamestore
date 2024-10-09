@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://images3.alphacoders.com/134/1345615.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.login-form {
+  background-color: rgba(0, 0, 0, 0.8); /* Matte black */
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%; /* Reduced width for smaller screens */
+  max-width: 400px; /* Maximum width for larger screens */
+  text-align: center;
+}
+
+.login-title {
+  font-size: 2rem; /* Adjusted for readability */
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  margin-bottom: 15px; /* Less margin between fields */
+  text-align: left; /* Align label to the left */
+}
+
+.input-label {
+  font-size: 1rem; /* Adjusted for readability */
+  font-weight: bold; /* Keep label bold */
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px; /* Space between label and input */
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem; /* Slightly smaller button text */
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Add some margin between button and inputs */
+}
+
+.sign-in-options {
+  margin-top: 20px;
+}
+
+.sign-in-text {
+  font-size: 1.2rem; /* Slightly smaller font for options */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon {
+  width: 40px; /* Smaller size for social icons */
+  height: auto;
+  margin: 0 10px; /* Space between icons */
+}
