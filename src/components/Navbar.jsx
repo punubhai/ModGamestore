@@ -1,19 +1,19 @@
-import { useAuth0 } from '@auth0/auth0-react'; // Import Auth0 hook
+import { useAuth0 } from '@auth0/auth0-react'; // Import Auth0 hook 
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import axios from "axios"; // Import axios for API requests 
+import axios from "axios"; // Import axios for API requests  
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './Header.css';
 import logoImage from './image/download (1).png';
-
-const Header = ({ onSearch, sortOrder, onGenreFilter }) => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [isGamesDropdownOpen, setGamesDropdownOpen] = useState(false);
-  const [filteredGames, setFilteredGames] = useState([]);
-  const [allGames, setAllGames] = useState([]); // Store all games from backend
-  const [loading, setLoading] = useState(false); // Track loading state
-  const [error, setError] = useState(null); // Track error state
-
+ 
+const Header = ({ onSearch, sortOrder, onGenreFilter }) => { 
+  const [searchTerm, setSearchTerm] = useState(''); 
+  const [isGamesDropdownOpen, setGamesDropdownOpen] = useState(false); 
+  const [filteredGames, setFilteredGames] = useState([]); 
+  const [allGames, setAllGames] = useState([]); // Store all games from backend 
+  const [loading, setLoading] = useState(false); // Track loading state 
+  const [error, setError] = useState(null); // Track error state 
+ 
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0(); // Destructure Auth0 hooks
   const navigate = useNavigate();
 
@@ -108,11 +108,11 @@ const Header = ({ onSearch, sortOrder, onGenreFilter }) => {
             </button>
             {isGamesDropdownOpen && (
               <div className="header__dropdown">
-                <a href="#" onClick={() => handleGenreSelect('All')}>All</a>
-                <a href="#" onClick={() => handleGenreSelect('Action')}>Action</a>
-                <a href="#" onClick={() => handleGenreSelect('Adventure')}>Adventure</a>
-                <a href="#" onClick={() => handleGenreSelect('RPG')}>RPG</a>
-                <a href="#" onClick={() => handleGenreSelect('Strategy')}>Strategy</a>
+                <button className="header__dropdown-item" onClick={() => handleGenreSelect('All')}>All</button>
+                <button className="header__dropdown-item" onClick={() => handleGenreSelect('Action')}>Action</button>
+                <button className="header__dropdown-item" onClick={() => handleGenreSelect('Adventure')}>Adventure</button>
+                <button className="header__dropdown-item" onClick={() => handleGenreSelect('RPG')}>RPG</button>
+                <button className="header__dropdown-item" onClick={() => handleGenreSelect('Strategy')}>Strategy</button>
               </div>
             )}
           </li>
@@ -173,5 +173,5 @@ const Header = ({ onSearch, sortOrder, onGenreFilter }) => {
     </header>
   );
 };
-
+ 
 export default Header;
