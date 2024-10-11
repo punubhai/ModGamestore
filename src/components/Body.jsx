@@ -2,41 +2,41 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./body.css";
 
-// Popup component
-const Popup = ({ game, onClose }) => {
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = `https://gamestorebackend.onrender.com/files/${game.apk}`; // Use the correct path for APK files
-    link.setAttribute("download", game.apk); // Set the file name for the download
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+// Popup component...
+const Popup = ({ game, onClose }) => { 
+  const handleDownload = () => { 
+    const link = document.createElement("a"); 
+    link.href = `https://gamestorebackend.onrender.com/files/${game.apk}`; 
+    link.setAttribute("download", game.apk); 
+    document.body.appendChild(link); 
+    link.click(); 
+    document.body.removeChild(link); 
+  }; 
 
-  return (
-    <div className="popup-overlay">
-      <div className="popup-content">
-        <h2>{game.title}</h2>
-        <img
-          src={`https://gamestorebackend.onrender.com/images/${game.image}`}
-          alt={game.title}
-          className="popup-image"
-        />
-        <p>Genre: {game.genre}</p>
-        <p>Description: {game.description || 'No description available'}</p>
-        <button onClick={onClose} className="popup-close-button">Close</button>
-        <button onClick={handleDownload} className="popup-download-button">Download APK</button>
-      </div>
-    </div>
-  );
-};
+  return ( 
+    <div className="popup-overlay"> 
+      <div className="popup-content"> 
+        <h2>{game.title}</h2> 
+        <img 
+          src={`https://gamestorebackend.onrender.com/images/${game.image}`} 
+          alt={game.title} 
+          className="popup-image" 
+        /> 
+        <p>Genre: {game.genre}</p> 
+        <p>Description: {game.description || 'No description available'}</p> 
+        <button onClick={onClose} className="popup-close-button">Close</button> 
+        <button onClick={handleDownload} className="popup-download-button">Download APK</button> 
+      </div> 
+    </div> 
+  ); 
+}; 
 
-const Body = ({ searchTerm = '', sortOrder = 'asc', selectedGenre = '' }) => {
-  const [games, setGames] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [filteredGames, setFilteredGames] = useState([]);
-  const [selectedGame, setSelectedGame] = useState(null);
+const Body = ({ searchTerm = '', sortOrder = 'asc', selectedGenre = '' }) => { 
+  const [games, setGames] = useState([]); 
+  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState(null); 
+  const [filteredGames, setFilteredGames] = useState([]); 
+  const [selectedGame, setSelectedGame] = useState(null); 
 
   useEffect(() => {
     const fetchGames = async () => {
@@ -75,6 +75,7 @@ const Body = ({ searchTerm = '', sortOrder = 'asc', selectedGenre = '' }) => {
     setFilteredGames(sortedFilteredGames);
   }, [games, searchTerm, sortOrder, selectedGenre]);
 
+  // Define the handleGameClick function
   const handleGameClick = (game) => {
     setSelectedGame(game);
   };
@@ -114,6 +115,16 @@ const Body = ({ searchTerm = '', sortOrder = 'asc', selectedGenre = '' }) => {
           <Popup game={selectedGame} onClose={handleClosePopup} />
         )}
       </header>
+
+      {/* AdSense Section */}
+      <div className="ads-container" style={{ marginTop: '20px' }}>
+        <ins className="adsbygoogle"
+          style={{ display: "block", width: "300px", height: "250px" }} // Set explicit width and height
+          data-ad-client="ca-pub-5318370501565991"
+          data-ad-slot="6963475194"
+          data-ad-format="rectangle" // Change to a specific format
+          data-full-width-responsive="true"></ins>
+      </div>
 
       {/* Footer section */}
       <footer className="footer">

@@ -1,17 +1,29 @@
 // App.js
-import React, { useState } from "react";
-import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router-dom"; // Import Navigate for redirection
-import { AuthProvider, useAuth } from "./AuthContext"; // Import AuthContext
+import React, { useEffect, useState } from "react";
+import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { useAuth } from "./AuthContext";
 import Body from "./components/Body";
-import Login from "./components/Login"; // Import the Login page
+import Login from "./components/Login";
 import Header from "./components/Navbar";
-import Register from "./components/Register"; // Import the Register page
-import UploadGames from "./components/UploadGames"; // Upload Games component
+import Register from "./components/Register";
+import UploadGames from "./components/UploadGames";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
   const [selectedGenre, setSelectedGenre] = useState('');
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5318370501565991";
+    script.crossOrigin = "anonymous";
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []); // Correctly using useEffect inside the component
 
   const handleSearch = (term) => {
     setSearchTerm(term);
@@ -26,30 +38,28 @@ const App = () => {
   };
 
   return (
-    <AuthProvider> {/* Wrap with AuthProvider */}
-      <Router>
-        <div className="App">
-          <Header 
-            onSearch={handleSearch} 
-            onSortOrderChange={handleSortOrder}
-            onGenreFilter={handleGenreFilter} 
-          />
-          <Routes>
-            <Route path="/" element={<Body searchTerm={searchTerm} sortOrder={sortOrder} selectedGenre={selectedGenre} />} />
-            <Route path="/login" element={<Login />} /> {/* Route for login */}
-            <Route path="/register" element={<Register />} /> {/* Route for registration */}
-            <Route path="/upload-games" element={<UploadGames />} /> {/* Route for Upload Games */}
-          </Routes>
-        </div>
-      </Router>
-    </AuthProvider>
+    <Router>
+      <div className="App">
+        <Header 
+          onSearch={handleSearch} 
+          onSortOrderChange={handleSortOrder}
+          onGenreFilter={handleGenreFilter} 
+        />
+        <Routes>
+          <Route path="/" element={<Body searchTerm={searchTerm} sortOrder={sortOrder} selectedGenre={selectedGenre} />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/upload-games" element={<ProtectedRoute element={<UploadGames />} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
 // Example of a protected route
 const ProtectedRoute = ({ element }) => {
-  const { user } = useAuth(); // Get user info from AuthContext
-  return user ? element : <Navigate to="/login" />; // Redirect to login if not authenticated
+  const { user } = useAuth();
+  return user ? element : <Navigate to="/login" />;
 };
 
 export default App;
